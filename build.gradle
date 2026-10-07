@@ -1,0 +1,28 @@
+plugins {
+    id 'application'
+}
+
+group = 'ru.team'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+application {
+    mainClass = 'astonteam.sorting.Main'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.named('run', JavaExec) {
+    standardInput = System.in
+}
