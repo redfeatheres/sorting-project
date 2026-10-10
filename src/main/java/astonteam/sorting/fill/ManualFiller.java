@@ -1,12 +1,12 @@
 package astonteam.sorting.fill;
 
+import astonteam.sorting.collection.CarList;
 import astonteam.sorting.common.Limits;
 import astonteam.sorting.console.ConsoleInput;
 import astonteam.sorting.model.Car;
 import astonteam.sorting.validation.CarValidator;
 import astonteam.sorting.validation.ValidationResult;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -36,7 +36,7 @@ public final class ManualFiller {
         System.out.printf("Введите %d автомобилей, заполняя поля по одному:%n", size);
         return IntStream.rangeClosed(1, size)
                 .mapToObj(this::readCar)
-                .collect(Collectors.toCollection(ArrayList::new));
+                .collect(Collectors.toCollection(CarList::new));
     }
 
     private Car readCar(int index) {

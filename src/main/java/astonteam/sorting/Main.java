@@ -1,5 +1,6 @@
 package astonteam.sorting;
 
+import astonteam.sorting.collection.CarList;
 import astonteam.sorting.common.Limits;
 import astonteam.sorting.console.AttemptsExceededException;
 import astonteam.sorting.console.ConsoleInput;
@@ -12,13 +13,12 @@ import astonteam.sorting.model.Car;
 import astonteam.sorting.validation.CarValidator;
 
 import java.io.UncheckedIOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
-        List<Car> cars = new ArrayList<>();
+        List<Car> cars = new CarList();
         CarValidator validator = new CarValidator();
         ResultSaver saver = new ResultSaver();
 
